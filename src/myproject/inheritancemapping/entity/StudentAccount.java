@@ -1,9 +1,18 @@
 package myproject.inheritancemapping.entity;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "std")
 public class StudentAccount extends Account{
 
+	@Column
 	private String sid;
+	@Column
 	private String sbranch;
+	@Column
 	private int smarks;
 	public String getSid() {
 		return sid;

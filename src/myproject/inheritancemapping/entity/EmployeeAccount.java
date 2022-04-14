@@ -1,9 +1,17 @@
 package myproject.inheritancemapping.entity;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "emp")
 public class EmployeeAccount extends Account{
-	
+	@Column
 	private String eid;
+	@Column
 	private float esal;
+	@Column
 	private String eaddr;
 	public String getEid() {
 		return eid;
