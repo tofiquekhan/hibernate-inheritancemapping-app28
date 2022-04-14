@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="myproject.inheritancemapping.entity.Account" table="acc1">
+<id name="accNo" length="10"/>
+<discriminator column="TYPE" type="string"/>
+<property name="accName" type="string" length="25"/>
+<property name="accType" type="string" length="10"/>
+<subclass name="myproject.inheritancemapping.entity.StudentAccount" discriminator-value="std">
+<property name="sid" type="string" length="10"/>
+<property name="sbranch" type="string" length="20"/>
+<property name="smarks" type="int" length="3"/>
+</subclass>
+<subclass name="myproject.inheritancemapping.entity.EmployeeAccount" discriminator-value="emp">
+<property name="eid" type="string" length="5"/>
+<property name="esal" type="float" length="5"/>
+<property name="eaddr" type="string" length="10"/>
+</subclass>
+</class>
+
+
+
+
+</hibernate-mapping>
